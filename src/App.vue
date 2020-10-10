@@ -2,6 +2,6 @@
     <router-view />
 </template>
 
-<style lang="less">
-@import './assets/less/style.less';
+<style lang="scss">
+@import './assets/scss/style.scss';
 </style>

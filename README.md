@@ -1,8 +1,8 @@
-# Vue3 + TS项目模板
+# Vue3 项目模板
 
 ## 已配置
 ```
-ESlint、prettier、TypeScript、Vant
+Vuex、Vue-Router、ESlint、prettier、Vant
 ```
 
 ## Project setup

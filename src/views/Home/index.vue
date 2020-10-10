@@ -6,6 +6,14 @@
         <van-button @click="clickBtn2" icon="plus" type="primary">按钮2</van-button>
         <van-loading />
         <van-loading type="spinner" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <HelloWorld></HelloWorld>
     </div>
 </template>
 
@@ -14,9 +22,11 @@ import { defineComponent, ref, reactive, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 
+import HelloWorld from '@/components/HelloWorld'
+
 export default defineComponent({
     name: 'home-index',
-    components: {},
+    components: { HelloWorld },
     setup() {
         // 接受一个内部值并返回一个响应式且可变的 ref 对象。ref 对象具有指向内部值的单个 property .value
         const tmpData = ref(1)

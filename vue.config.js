@@ -36,7 +36,5 @@ module.exports = {
     configureWebpack: {
         devtool: 'source-map'
     },
-    chainWebpack: () => {},
-    assetsDir: 'adminweb',
-    outputDir: 'build'
+    chainWebpack: () => {}
 }
