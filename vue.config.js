@@ -11,13 +11,13 @@ module.exports = {
         }
     },
     devServer: {
-        port: 6006,
+        port: 8061,
         host: '0.0.0.0',
         hot: true,
         disableHostCheck: true,
         proxy: {
             '/api': {
-                target: 'https://cnodejs.org',
+                target: 'http://php.mmxiaowu.com',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': '/api'

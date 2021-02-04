@@ -7,3 +7,36 @@
     padding-top: 0.5rem;
     line-height: 0.5rem;
 }
+
+.wrap {
+    .van-tabbar {
+        position: absolute !important;
+        border-top: 1px solid #f8f8f8;
+        box-sizing: border-box;
+        z-index: 999 !important;
+        overflow: hidden;
+    }
+    .body {
+        .van-nav-bar {
+            border-bottom: 1px solid #f8f8f8;
+            box-sizing: border-box;
+            z-index: 999 !important;
+        }
+        .van-skeleton__row,
+        .van-skeleton__title {
+            background-color: #ccc;
+        }
+        .van-button + .van-button {
+            margin-left: 10px;
+        }
+    }
+    .van-tabs {
+        @media screen and (min-width: 540PX) {
+            .van-sticky--fixed {
+                left: 50%;
+                width: 540PX;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

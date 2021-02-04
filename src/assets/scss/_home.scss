@@ -5,34 +5,51 @@
             min-height: calc(100vh - var(--tabbar-height));
         }
     }
+    .scroller {
+        height: 100vh;
+    }
+}
+
+.home-normal-wrap {
+    .lists {
+        padding: 0 30px;
+        background: #fff;
+        .item {
+            padding: 20px 0;
+            a {
+                line-height: 1.5;
+                color: #323232;
+            }
+        }
+    }
 }
 
 .home-detail-wrap {
-    padding-top: 0.92rem;
+    padding-top: 92px;
     background: #fff;
     .van-nav-bar__text:active {
         background: #fff;
     }
     .article-content {
-        padding: 0.2rem;
+        padding: 20px;
         .title {
-            font-size: .32rem;
+            font-size: 32px;
             line-height: 40px;
             text-align: center;
         }
         .date-time {
-            margin-top: .1rem;
+            margin-top: 10px;
             text-align: center;
             color: #666;
         }
         .content {
-            padding-top: .2rem;
-            font-size: .28rem;
+            padding-top: 20px;
+            font-size: 28px;
             color: #333;
             p {
                 line-height: 1.5;
                 & + p {
-                    margin-top: 0.1rem;
+                    margin-top: 10px;
                 }
                 img {
                     max-width: 100%;
@@ -40,7 +57,10 @@
             }
             pre {
                 width: 100%;
+                padding: 20px 0;
+                overflow-y: hidden;
                 overflow-x: scroll;
+                -webkit-overflow-scrolling : touch;
             }
         }
     }
@@ -48,10 +68,10 @@
         background: #f4f4f4;
         overflow: hidden;
         .van-panel {
-            margin-top: .2rem;
+            margin-top: 20px;
         }
         .van-panel__content {
-            padding: .2rem 0.3rem;
+            padding: 20px 20px;
         }
         .markdown-text {
             img {
