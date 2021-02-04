@@ -2,54 +2,12 @@
     <div class="home-wrap" :class="$options.name">
         <div class="route-wrap">
             <van-tabs :sticky="true" :swipeable="true">
-                <van-tab title="全部">
-                    <van-pull-refresh v-model="res.list[0].refreshing" @refresh="onRefresh(0)">
-                        <van-list v-model="res.list[0].loading" :finished="res.list[0].finished" @load="getList(0)">
+                <van-tab v-for="(item, index) in res.tabs" :key="index" :title="item">
+                    <van-pull-refresh v-model="res.list[index].refreshing" @refresh="onRefresh(index)">
+                        <van-list v-model="res.list[index].loading" :finished="res.list[index].finished" @load="getList(index)">
                             <van-cell
-                                v-for="item in res.list[0].items"
-                                :key="`0_${item.c_id}}`"
-                                :title="item.c_title"
-                                is-link
-                                :to="`/index/detail?id=${item.c_id}`"
-                            />
-                        </van-list>
-                    </van-pull-refresh>
-                </van-tab>
-
-                <van-tab title="问答">
-                    <van-pull-refresh v-model="res.list[1].refreshing" @refresh="onRefresh(1)">
-                        <van-list v-model="res.list[1].loading" :finished="res.list[1].finished" @load="getList(1)">
-                            <van-cell
-                                v-for="item in res.list[1].items"
-                                :key="`1_${item.c_id}}`"
-                                :title="item.c_title"
-                                is-link
-                                :to="`/index/detail?id=${item.c_id}`"
-                            />
-                        </van-list>
-                    </van-pull-refresh>
-                </van-tab>
-
-                <van-tab title="分享">
-                    <van-pull-refresh v-model="res.list[2].refreshing" @refresh="onRefresh(2)">
-                        <van-list v-model="res.list[2].loading" :finished="res.list[2].finished" @load="getList(2)">
-                            <van-cell
-                                v-for="item in res.list[2].items"
-                                :key="`2_${item.c_id}}`"
-                                :title="item.c_title"
-                                is-link
-                                :to="`/index/detail?id=${item.c_id}`"
-                            />
-                        </van-list>
-                    </van-pull-refresh>
-                </van-tab>
-
-                <van-tab title="推荐">
-                    <van-pull-refresh v-model="res.list[3].refreshing" @refresh="onRefresh(3)">
-                        <van-list v-model="res.list[3].loading" :finished="res.list[3].finished" @load="getList(3)">
-                            <van-cell
-                                v-for="item in res.list[3].items"
-                                :key="`3_${item.c_id}}`"
+                                v-for="item in res.list[index].items"
+                                :key="`${index}_${item.c_id}}`"
                                 :title="item.c_title"
                                 is-link
                                 :to="`/index/detail?id=${item.c_id}`"
@@ -83,7 +41,8 @@ export default {
             { method: 'get', url: 'ajax/article-list', config: { perPage: 20, tab: 'share' } },
             { method: 'get', url: 'ajax/article-list', config: { perPage: 20, tab: 'good' } }
         ]
-        const { body, res, getList, onRefresh } = tabLists({ api })
+        const tabs = ['全部', '问答', '分享', '推荐']
+        const { body, res, getList, onRefresh } = tabLists({ api, tabs })
 
         return {
             body,

@@ -14,8 +14,8 @@ function install(app) {
         },
         mounted() {
             const blackComponents = ['router-link', 'keep-alive', 'transition-group']
-            const componentName = this._isVue ? this.$options.name || this.$options._componentTag : this.name
-            if (componentName && componentName.indexOf('-') > 0 && componentName.indexOf('van-') < 0 && !blackComponents.includes(componentName)) {
+            const componentName = this.$options.name
+            if (componentName && componentName.indexOf('van-') < 0 && !blackComponents.includes(componentName)) {
                 console.log(`%c[${UTC2Date(null, 'y-m-d h:i:s.v')}] ${componentName} Mounted`, 'color: green')
                 window[`$$${tranformStr(componentName)}`] = this
             }
